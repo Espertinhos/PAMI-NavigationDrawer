@@ -1,8 +1,11 @@
 package br.com.etechoracio.navigationdrawer;
 
+
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -84,20 +87,26 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_borussia) {
             // Handle the camera action
             nome = "Borussia";
-            idImagem = R.drawable.Borussia_Dortmund;
+            idImagem = R.drawable.borussia;
         } else if (id == R.id.nav_united) {
             nome = "M. United";
-            idImagem = R.drawable.Manchester_United_logo;
+            idImagem = R.drawable.manchester;
         } else if (id == R.id.nav_porto) {
             nome = "Porto";
-            idImagem = R.drawable.F;
+            idImagem = R.drawable.porto;
         } else if (id == R.id.nav_psg) {
             nome = "PSG";
-            idImagem = R.drawable.Logo_PSG;
+            idImagem = R.drawable.psg;
         } else if (id == R.id.nav_barca) {
             nome = "Barcelona";
             idImagem = R.drawable.download;
         }
+        Fragment fragment = CustomFragment.newInstance(nome, idImagem);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.content_frame, fragment);
+        transaction.commit();
+        setTitle(nome);
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
