@@ -81,18 +81,22 @@ public class MainActivity extends AppCompatActivity
         int idImagem = 0;
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
+        if (id == R.id.nav_borussia) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_tools) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+            nome = "Borussia";
+            idImagem = R.drawable.Borussia_Dortmund;
+        } else if (id == R.id.nav_united) {
+            nome = "M. United";
+            idImagem = R.drawable.Manchester_United_logo;
+        } else if (id == R.id.nav_porto) {
+            nome = "Porto";
+            idImagem = R.drawable.F;
+        } else if (id == R.id.nav_psg) {
+            nome = "PSG";
+            idImagem = R.drawable.Logo_PSG;
+        } else if (id == R.id.nav_barca) {
+            nome = "Barcelona";
+            idImagem = R.drawable.download;
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
